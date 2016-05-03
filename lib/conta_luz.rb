@@ -12,4 +12,12 @@ class ContaLuz
        @qtdKwGasto = qtdGasto
     end
 
-end
+    def valorPagar=(valor)
+        @valorPagar = valor
+    end
+    
+    def valorPagar
+        @valorPagar
+    end
+
+end#fim da classe ContaLuz
