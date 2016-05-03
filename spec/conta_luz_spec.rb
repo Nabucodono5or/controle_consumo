@@ -11,6 +11,7 @@ describe ContaLuz do
     describe "#qtdKwGasto" do
         it "devolve a quantidade de kw gasto" do
             qtdKwGasto = 460
+            conta_luz.qtdKwGasto= qtdKwGasto
 
             expect(conta_luz.qtdKwGasto).to eq(qtdKwGasto)
 
