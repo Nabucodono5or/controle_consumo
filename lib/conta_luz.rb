@@ -8,8 +8,8 @@ class ContaLuz
        @qtdKwGasto
     end
 
-#    def qtdKwGasto=(qtdGasto)
-#       @qtdKwGasto = qtdGasto
-#    end
+    def qtdKwGasto=(qtdGasto)
+       @qtdKwGasto = qtdGasto
+    end
 
 end

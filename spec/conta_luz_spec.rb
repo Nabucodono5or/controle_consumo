@@ -20,7 +20,7 @@ describe ContaLuz do
         it "armazena a quantidade de kw gasto" do
             qtdkwGasto = 460            
 
-            expect(conta_luz).to receive(:qtdKwGasto=).with(qtdKwGasto)
+            expect(conta_luz).to receive(:qtdKwGasto=).with(460)
 
             conta_luz.qtdKwGasto= 460
         end        
