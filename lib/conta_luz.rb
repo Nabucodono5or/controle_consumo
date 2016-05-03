@@ -3,4 +3,13 @@
 
 class ContaLuz
  # codigo para implementar
+
+    def qtdKwGasto
+       @qtdKwGasto
+    end
+
+#    def qtdKwGasto=(qtdGasto)
+#       @qtdKwGasto = qtdGasto
+#    end
+
 end

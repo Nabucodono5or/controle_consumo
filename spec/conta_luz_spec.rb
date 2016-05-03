@@ -12,11 +12,10 @@ describe ContaLuz do
         it "devolve a quantidade de kw gasto" do
             qtdKwGasto = 460
 
-            expect(conta_luz).to receive(:qtdKwGasto).and_return(qtdKwGasto)
-            
-            conta_luz.qtdKwGasto= 460
-        end
-        
+            expect(conta_luz.qtdKwGasto).to eq(qtdKwGasto)
+
+            conta_luz.qtdKwGasto
+        end        
     end
 
 end
