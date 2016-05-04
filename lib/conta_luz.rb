@@ -4,20 +4,28 @@
 class ContaLuz
  # codigo para implementar
 
-    def qtdKwGasto
-       @qtdKwGasto
+    def qtd_kw_gasto
+       @qtd_kw_gasto
     end
 
-    def qtdKwGasto=(qtdGasto)
-       @qtdKwGasto = qtdGasto
+    def qtd_kw_gasto=(qtd_gasto)
+       @qtd_kw_gasto = qtd_gasto
     end
 
-    def valorPagar=(valor)
-        @valorPagar = valor
+    def valor_pagar=(valor)
+        @valor_pagar = valor
     end
     
-    def valorPagar
-        @valorPagar
+    def valor_pagar
+        @valor_pagar
+    end
+
+    def numero_leitura=(numero)
+        @numero_leitura = numero
+    end
+
+    def numero_leitura
+        @numero_leitura
     end
 
 end#fim da classe ContaLuz

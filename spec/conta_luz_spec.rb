@@ -10,42 +10,63 @@ describe ContaLuz do
 
     describe "#qtdKwGasto" do
         it "devolve a quantidade de kw gasto" do
-            qtdKwGasto = 460
-            conta_luz.qtdKwGasto= qtdKwGasto
+            qtd_kw_gasto = 460
+            conta_luz.qtd_kw_gasto= qtd_kw_gasto
 
-            expect(conta_luz.qtdKwGasto).to eq(qtdKwGasto)
+            expect(conta_luz.qtd_kw_gasto).to eq(qtd_kw_gasto)
 
-            conta_luz.qtdKwGasto
+            conta_luz.qtd_kw_gasto
         end
 
         it "armazena a quantidade de kw gasto" do
-            qtdkwGasto = 460            
+            qtd_kw_gasto = 460            
 
-            expect(conta_luz).to receive(:qtdKwGasto=).with(460)
+            expect(conta_luz).to receive(:qtd_kw_gasto=).with(460)
 
-            conta_luz.qtdKwGasto= 460
+            conta_luz.qtd_kw_gasto= 460
         end        
     end# fim do describe #qtdKwGasto
 
     describe "#valorPagar" do
         it "armazena o valor a pagar" do
-            valorPagar = 206,43
+            valor_pagar = 206,43
 
-            expect(conta_luz).to receive(:valorPagar=).with(valorPagar)
+            expect(conta_luz).to receive(:valor_pagar=).with(valor_pagar)
 
-            conta_luz.valorPagar= 206,43
+            conta_luz.valor_pagar= 206,43
         end
 
         it "retorna o valor a ser pago" do
-            valorPagar = 206,43
-            conta_luz.valorPagar= valorPagar
+            valor_pagar = 206,43
+            conta_luz.valor_pagar= valor_pagar
 
-            expect(conta_luz.valorPagar).to eq(valorPagar)
+            expect(conta_luz.valor_pagar).to eq(valor_pagar)
 
-            conta_luz.valorPagar
+            conta_luz.valor_pagar
         end
 
     end#fim do describe #valorPagar
 
+    describe "#numeroLeitura" do
+        it "armazena numero de leitura" do
+            numero_leitura = 4166
 
+            expect(conta_luz).to receive(:numero_leitura=).with(numero_leitura)
+
+            conta_luz.numero_leitura= 4166
+        end
+
+        it "recupera numero de leitura" do
+            numero_leitura = 4166
+            conta_luz.numero_leitura= numero_leitura
+
+            expect(conta_luz.numero_leitura).to eq(numero_leitura)
+
+            conta_luz.numero_leitura
+        end
+    end# fim do describe numero_leitura
+
+    describe "#vencimento" do
+        #implemntar por data
+    end
 end# fim do teste da classe ContaLuz
