@@ -28,4 +28,7 @@ class ContaLuz
         @numero_leitura
     end
 
+    def vencimento=(string)
+        @vencimento = string
+    end
 end#fim da classe ContaLuz
