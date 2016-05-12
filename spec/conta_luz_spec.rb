@@ -76,7 +76,7 @@ describe ContaLuz do
         end
 
         it "retorna a data de vencimento" do
-            date = "15/07/2005"
+            date = "15/7/2005"
             conta_luz.vencimento= "15/07/2005"
 
             expect(conta_luz.vencimento).to eq(date)

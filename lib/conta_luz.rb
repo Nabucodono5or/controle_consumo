@@ -29,8 +29,8 @@ class ContaLuz
     end
 
     def vencimento=(string)
-        valores_datas = string.split("/")
-        @vencimento = Date.new(valores_datas[2].to_i,valores_datas[1].to_i, valores_datas[0].to_i)
+        formato_europeu = '%d/%m/%Y'
+        @vencimento = Date.strptime(string, formato_europeu)
     end
 
     def vencimento
