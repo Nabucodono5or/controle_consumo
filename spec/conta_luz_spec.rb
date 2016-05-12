@@ -86,4 +86,13 @@ describe ContaLuz do
         
     end#fim do describe #vencimento
 
+    describe "#data_emissao" do
+        it "armazena data de emissão" do
+            date = "04/07/2005"
+
+            expect(conta_luz).to receive(:emissao=).with(date)
+
+            conta_luz.emissao= "04/07/2005"
+        end
+    end# fim do describe data_vencimento
 end# fim do teste da classe ContaLuz
