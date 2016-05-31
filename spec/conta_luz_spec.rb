@@ -116,7 +116,23 @@ describe ContaLuz do
             conta_luz.mes= mes         
         end
 
-        it "retorna o mes da conta"
+        it "o valor do mes é um inteiro" do
+            mes = 6
+            conta_luz.mes= mes
+
+            expect(conta_luz.mes).to be_a_kind_of(Fixnum)
+
+            conta_luz.mes
+        end
+
+        it "retorna o mes da conta" do
+            mes = 6
+            conta_luz.mes= 6
+
+            expect(conta_luz.mes).to eq(mes)
+
+            conta_luz.mes
+        end
         
     end#fim do describe mes
 

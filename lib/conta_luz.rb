@@ -53,5 +53,9 @@ class ContaLuz
         @mes = mes.to_i
     end
 
+    def mes
+        @mes
+    end
+    
     
 end#fim da classe ContaLuz
