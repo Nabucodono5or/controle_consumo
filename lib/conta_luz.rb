@@ -3,6 +3,11 @@
 
 class ContaLuz
  # codigo para implementar
+    attr_accessor :formato_europeu
+
+    def initialize
+        @formato_europeu = '%d/%m/%Y'
+    end
 
     def qtd_kw_gasto
        @qtd_kw_gasto
@@ -28,12 +33,15 @@ class ContaLuz
         @numero_leitura
     end
 
-    def vencimento=(string)
-        formato_europeu = '%d/%m/%Y'
+    def vencimento=(string)        
         @vencimento = Date.strptime(string, formato_europeu)
     end
 
     def vencimento
         @vencimento.day.to_s << "/" << @vencimento.month.to_s << "/" << @vencimento.year.to_s
+    end
+
+    def emissao=(string)
+        @emissao = Date.strptime(string, formato_europeu)        
     end
 end#fim da classe ContaLuz
