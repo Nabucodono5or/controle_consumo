@@ -137,8 +137,21 @@ describe ContaLuz do
     end#fim do describe mes
 
     describe "#ano" do
-        it "armazena o ano da conta"
-        it "retorna o ano da conta"
+        it "armazena o ano da conta" do
+            ano = 2005
+            
+            expect(conta_luz).to receive(:ano=).with(ano)
+
+            conta_luz.ano= 2005
+        end
+        it "retorna o ano da conta" do
+            ano = 2005
+            conta_luz.ano= 2005
+
+            expect(conta_luz.ano).to eq(ano)
+
+            conta_luz.ano
+        end
     end#fim do describe ano
 
     describe "#nominal"  do

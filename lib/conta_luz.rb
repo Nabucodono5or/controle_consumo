@@ -57,5 +57,12 @@ class ContaLuz
         @mes
     end
     
+    def ano=(ano)
+        @ano = ano
+    end
     
+    def ano
+        @ano
+    end
+
 end#fim da classe ContaLuz
