@@ -48,4 +48,6 @@ class ContaLuz
     def emissao
         @emissao.day.to_s << "/" << @emissao.month.to_s << "/" << @emissao.year.to_s
     end
+
+
 end#fim da classe ContaLuz

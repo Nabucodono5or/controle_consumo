@@ -6,6 +6,7 @@ require 'spec_helper'
 describe ContaLuz do
    # aqui implementaremos os testes dos métodos
     subject(:conta_luz) { ContaLuz.new() }
+	let(:data_nominal) { double("nominal").as_null_object }
 
 
     describe "#qtdKwGasto" do
@@ -106,5 +107,27 @@ describe ContaLuz do
 
     end# fim do describe data_vencimento
 
+    describe "#mes" do
+        it "armazena o mes da conta" do
+            mes = 6
 
+           expect(conta_luz).to receive(:mes).with(mes) 
+
+            conta_luz.mes= mes         
+        end
+
+        it "retorna o mes da conta"
+        
+    end#fim do describe mes
+
+    describe "#ano" do
+        it "armazena o ano da conta"
+        it "retorna o ano da conta"
+    end#fim do describe ano
+
+    describe "#nominal"  do
+        it "armazena o mes nominal"
+        it "retorna o mes nominal"
+    end#fim do describe nominal
+    
 end# fim do teste da classe ContaLuz
