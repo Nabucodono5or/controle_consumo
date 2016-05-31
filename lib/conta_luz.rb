@@ -49,5 +49,9 @@ class ContaLuz
         @emissao.day.to_s << "/" << @emissao.month.to_s << "/" << @emissao.year.to_s
     end
 
+    def mes=(mes)
+        @mes = mes.to_i
+    end
 
+    
 end#fim da classe ContaLuz

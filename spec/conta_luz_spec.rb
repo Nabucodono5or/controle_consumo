@@ -111,7 +111,7 @@ describe ContaLuz do
         it "armazena o mes da conta" do
             mes = 6
 
-           expect(conta_luz).to receive(:mes).with(mes) 
+           expect(conta_luz).to receive(:mes=).with(mes) 
 
             conta_luz.mes= mes         
         end
