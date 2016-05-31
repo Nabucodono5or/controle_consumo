@@ -44,4 +44,8 @@ class ContaLuz
     def emissao=(string)
         @emissao = Date.strptime(string, formato_europeu)        
     end
+
+    def emissao
+        @emissao.day.to_s << "/" << @emissao.month.to_s << "/" << @emissao.year.to_s
+    end
 end#fim da classe ContaLuz

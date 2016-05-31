@@ -94,5 +94,17 @@ describe ContaLuz do
 
             conta_luz.emissao= "04/07/2005"
         end
+
+        it "retorna data de emissao" do
+            date = "4/7/2005"
+            conta_luz.emissao= "04/07/2005"
+
+            expect(conta_luz.emissao).to eq(date)
+
+            conta_luz.emissao
+        end
+
     end# fim do describe data_vencimento
+
+
 end# fim do teste da classe ContaLuz
