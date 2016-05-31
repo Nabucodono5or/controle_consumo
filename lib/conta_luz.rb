@@ -1,5 +1,6 @@
 # encoding: UTF-8
 # informações de uma conta de luz qualquer
+require 'data_nominal'
 
 class ContaLuz
  # codigo para implementar
@@ -63,6 +64,11 @@ class ContaLuz
     
     def ano
         @ano
+    end
+
+    def nominal
+        @nominal =  DataNominal.new mes if mes
+        @nominal.nominal
     end
 
 end#fim da classe ContaLuz

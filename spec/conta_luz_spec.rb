@@ -155,7 +155,14 @@ describe ContaLuz do
     end#fim do describe ano
 
     describe "#nominal"  do
-        it "armazena o mes nominal"
+        it "armazena o mes nominal" do
+            conta_luz.mes= 6
+
+            expect(conta_luz.nominal).to eq("Julho")
+
+            conta_luz.nominal
+        end
+
         it "retorna o mes nominal"
     end#fim do describe nominal
     
