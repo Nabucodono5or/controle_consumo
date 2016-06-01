@@ -77,12 +77,21 @@ describe ContaLuz do
         end
 
         it "retorna a data de vencimento" do
-            date = "15/7/2005"
+            date = Date.strptime("15/07/2005",'%d/%m/%Y')
             conta_luz.vencimento= "15/07/2005"
 
             expect(conta_luz.vencimento).to eq(date)
 
             conta_luz.vencimento
+        end
+
+        it "retorna o vencimento no formato string" do
+            date = "15/7/2005"
+            conta_luz.vencimento = "15/07/2005"
+
+            expect(conta_luz.vencimento_impresso).to eq(date)
+
+            conta_luz.vencimento_impresso
         end
         
     end#fim do describe #vencimento
