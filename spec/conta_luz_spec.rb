@@ -84,17 +84,29 @@ describe ContaLuz do
 
             conta_luz.vencimento
         end
+        
+    end#fim do describe #vencimento
 
+    describe "#formatar_data" do
         it "retorna o vencimento no formato string" do
             date = "15/7/2005"
             conta_luz.vencimento = "15/07/2005"
 
-            expect(conta_luz.vencimento_impresso).to eq(date)
+            expect(conta_luz.formatar_data(conta_luz.vencimento)).to eq(date)
 
-            conta_luz.vencimento_impresso
+            conta_luz.formatar_data(conta_luz.vencimento)
         end
-        
-    end#fim do describe #vencimento
+
+        it "retorna a data da emissão no formato string" do
+            date = "4/7/2005"
+            conta_luz.emissao = "04/07/2005"
+
+            expect(conta_luz.formatar_data(conta_luz.emissao)).to eq(date)
+
+            conta_luz.formatar_data(conta_luz.emissao)
+        end
+
+    end#fim do describe #formatar_data
 
     describe "#data_emissao" do
         it "armazena data de emissão" do
@@ -106,7 +118,7 @@ describe ContaLuz do
         end
 
         it "retorna data de emissao" do
-            date = "4/7/2005"
+            date = Date.strptime("4/7/2005", '%d/%m/%Y')
             conta_luz.emissao= "04/07/2005"
 
             expect(conta_luz.emissao).to eq(date)

@@ -11,6 +11,7 @@ class ContaLuz
     attr_reader :mes
     attr_accessor :ano
     attr_reader :vencimento
+    attr_reader :emissao
 
     def initialize
         @formato_europeu = '%d/%m/%Y'
@@ -20,16 +21,12 @@ class ContaLuz
         @vencimento = Date.strptime(string, formato_europeu)
     end
 
-    def vencimento_impresso#adcionar um metodo attr_reader para vencimento e trocar metodo de impressão
-        vencimento.day.to_s << "/" << vencimento.month.to_s << "/" << vencimento.year.to_s
+    def formatar_data(data_p)#adcionar um metodo attr_reader para vencimento e trocar metodo de impressão
+        data_p.day.to_s << "/" << data_p.month.to_s << "/" << data_p.year.to_s
     end
 
     def emissao=(string)
         @emissao = Date.strptime(string, formato_europeu)        
-    end
-
-    def emissao#mesma coisa que vencimento
-        @emissao.day.to_s << "/" << @emissao.month.to_s << "/" << @emissao.year.to_s
     end
 
     def mes=(mes)
