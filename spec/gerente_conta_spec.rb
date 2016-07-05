@@ -7,7 +7,7 @@ describe GerenteContas do
   # implementaremos testes dos métodos
 
   subject(:gerente_contas) { GerenteContas.new() }
-  let(:conta_luz) { double("conta").as_null_object }
+  let(:conta_luz) { double("conta") }
 
   describe "#entrada de dados" do
     it "aramazena a quantidade de kw Gasto dado" do
