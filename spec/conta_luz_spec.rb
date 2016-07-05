@@ -5,7 +5,7 @@ require 'spec_helper'
 
 describe ContaLuz do
    # aqui implementaremos os testes dos métodos
-    subject(:conta_luz) { ContaLuz.new() }
+  subject(:conta_luz) { ContaLuz.new() }
 	let(:data_nominal) { double("nominal").as_null_object }
 
  
@@ -20,12 +20,12 @@ describe ContaLuz do
         end
 
         it "armazena a quantidade de kw gasto" do
-            qtd_kw_gasto = 460            
+            qtd_kw_gasto = 460
 
             expect(conta_luz).to receive(:qtd_kw_gasto=).with(460)
 
             conta_luz.qtd_kw_gasto= 460
-        end        
+        end
     end# fim do describe #qtdKwGasto
 
 
@@ -87,7 +87,7 @@ describe ContaLuz do
 
           conta_luz.vencimento
         end
-        
+
     end#fim do describe #vencimento
 
 
@@ -138,9 +138,9 @@ describe ContaLuz do
         it "armazena o mes da conta" do
           mes = 6
 
-          expect(conta_luz).to receive(:mes=).with(mes) 
+          expect(conta_luz).to receive(:mes=).with(mes)
 
-          conta_luz.mes= mes         
+          conta_luz.mes= mes
         end
 
         it "o valor do mes é um inteiro" do
@@ -160,14 +160,14 @@ describe ContaLuz do
 
           conta_luz.mes
         end
-        
+
     end#fim do describe mes
 
 
     describe "#ano" do
         it "armazena o ano da conta" do
           ano = 2005
-            
+
           expect(conta_luz).to receive(:ano=).with(ano)
 
           conta_luz.ano= 2005
@@ -201,6 +201,6 @@ describe ContaLuz do
         end
     end#fim do describe nominal
 
-    
+
 
 end# fim do teste da classe ContaLuz

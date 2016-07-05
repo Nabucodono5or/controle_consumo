@@ -19,7 +19,7 @@ class ContaLuz
     end
 
 #metodos que modificam dados
-    def vencimento=(string)        
+    def vencimento=(string)
         @vencimento = Date.strptime(string, formato_europeu)
     end
 
@@ -28,13 +28,13 @@ class ContaLuz
     end
 
     def emissao=(string)
-        @emissao = Date.strptime(string, formato_europeu)        
+        @emissao = Date.strptime(string, formato_europeu)
     end
 
     def mes=(mes)
         @mes = mes.to_i
     end
-    
+
     def nominal
         @nominal =  DataNominal.new mes if mes
         @nominal.nominal
