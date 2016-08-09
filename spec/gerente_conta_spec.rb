@@ -18,6 +18,13 @@ describe GerenteContas do
 
         gerente_contas.qtd_kw_gasto
       end
+
+      it "impede que tenha acesso a qtd_kw_gasto" do
+        qtd = 460
+        gerente_contas.entrada_de_dados(460)
+
+        expect{ gerente_contas.qtd_kw_gasto }.to raise_error(NoMethodError)
+      end
     end
 
     it "armazena a quantidade de o valor a pagar"
