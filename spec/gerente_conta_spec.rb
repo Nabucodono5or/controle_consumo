@@ -10,14 +10,16 @@ describe GerenteContas do
   let(:conta_luz) { double("conta") }
 
   describe "#entrada de dados" do
-    it "aramazena a quantidade de kw Gasto dado" do
-      allow(conta_luz).to receive(:qtd_kw_gasto).and_return(460)
-      qtd = 460
+    context '#entrada_de_dados para kw gasto' do
+      it "aramazena a quantidade de kw Gasto dado" do
+        qtd = 460
 
-      expect(conta_luz).to have_received(:qtd_kw_gasto).with(qtd)
+        expect(gerente_contas.qtd_kw_gasto).to eq(qtd)
 
-      gerente_contas.entrada_de_dados(qtd)
+        gerente_contas(qtd)
+      end
     end
+
     it "armazena a quantidade de o valor a pagar"
     it "armazena o número de leitura da conta"
     it "armazena o mes"
