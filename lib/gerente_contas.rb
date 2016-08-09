@@ -6,6 +6,8 @@ require 'conta_luz'
 
 class GerenteContas
 
+attr_reader :qtd_kw_gasto
+
 # inicializa o array de contas
   def initialize()
     listaContas = []
@@ -14,7 +16,7 @@ class GerenteContas
 
 # principal entrada de dados das contas
   def entrada_de_dados(qtd)
-    conta.qtd_kw_gasto = qtd
+    @qtd_kw_gasto = qtd
   end
 
 end
