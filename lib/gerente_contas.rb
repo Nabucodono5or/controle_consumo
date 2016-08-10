@@ -21,6 +21,8 @@ class GerenteContas
     @conta.ano = ano
     @conta.emissao = emissao
     @conta.vencimento = vencimento
+
+    @listaContas << @conta
   end
 
 end

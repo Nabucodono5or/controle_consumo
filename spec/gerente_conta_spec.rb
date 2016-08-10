@@ -33,10 +33,10 @@ describe GerenteContas do
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
     end
 
-    it "O array será incrementado" do
-      expect(gerente_contas.instance_variable_get(:@listaContas)).not_to be_empty
-
+    it "O array será incrementado em um" do
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+
+      expect(gerente_contas.instance_variable_get(:@listaContas)).not_to be_empty
     end
   end
 end
