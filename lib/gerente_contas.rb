@@ -8,7 +8,7 @@ class GerenteContas
 
 # inicializa o array de contas
   def initialize()
-    listaContas = []
+    @listaContas = []
     @conta = ContaLuz.new
   end
 
