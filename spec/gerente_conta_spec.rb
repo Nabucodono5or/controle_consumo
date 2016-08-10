@@ -19,6 +19,11 @@ describe GerenteContas do
     it "instacia uma conta de luz" do
       expect(gerente_contas.instance_variable_get(:@conta)).not_to eql(nil)
     end
+
+    # a princípio a lista será privada
+    it "A lista de contas de estar vazia" do
+      expect(gerente_contas.instance_variable_get(:@listaContas)).to be_empty
+    end
   end
 
   describe "#entrada de dados" do
