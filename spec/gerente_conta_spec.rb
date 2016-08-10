@@ -6,12 +6,20 @@ require 'spec_helper'
 describe GerenteContas do
   # implementaremos testes dos métodos
   # testaremos se todos os argumentos foram enviados/recebidos (passed)
+  # testaremos se inicializamos uma conta de luz (passed)
   # testaremos se o array da inicialização é incrementado
   # testaremos se possível a inicialização da classe ContaLuz
   # testaremos os métodos de comparação de contas
 
   subject(:gerente_contas) { GerenteContas.new() }
-  let(:conta) { double("conta") }
+
+  describe "#initialize" do
+    # Não identifiquei nenhum método melhor para testar se existe uma instancia
+    # da classe ContaLuz sem chamá-la ao teste
+    it "instacia uma conta de luz" do
+      expect(gerente_contas.instance_variable_get(:@conta)).not_to eql(nil)
+    end
+  end
 
   describe "#entrada de dados" do
     it "armazena sete argumentos lançados para serem instaciados em uma classe" do
