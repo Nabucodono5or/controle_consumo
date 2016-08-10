@@ -27,6 +27,7 @@ describe GerenteContas do
         gerente_contas.entrada_de_dados(460)
       end
 
+      # isso foi um teste para verificar a entrada de dados, o method qtd_kw_gasto era temporário
       it "impede que tenha acesso a qtd_kw_gasto um método para acessar o dado de entrada" do
         gerente_contas.entrada_de_dados(460)
 
@@ -34,11 +35,11 @@ describe GerenteContas do
       end
     end
 
-    it "armazena a quantidade de o valor a pagar"
-    it "armazena o número de leitura da conta"
-    it "armazena o mes"
-    it "armazena o ano"
-    it "aramazena a data de emissao"
-    it "armazena a data de vencimento"
+    it "armazena a quantidade de o valor a pagar como argumento"
+    it "armazena o número de leitura da conta como argumento"
+    it "armazena o mes como argumento"
+    it "armazena o ano como argumento"
+    it "aramazena a data de emissao como argumento"
+    it "armazena a data de vencimento como argumento"
   end
 end
