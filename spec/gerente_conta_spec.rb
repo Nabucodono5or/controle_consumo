@@ -35,7 +35,11 @@ describe GerenteContas do
       end
     end
 
-    it "armazena a quantidade de o valor a pagar como argumento"
+    it "armazena a quantidade de valor a pagar como argumento" do
+      expect(gerente_contas).to respond_to(:entrada_de_dados).with(2).arguments
+
+      gerente_contas.entrada_de_dados(460, 206.43)
+    end
     it "armazena o número de leitura da conta como argumento"
     it "armazena o mes como argumento"
     it "armazena o ano como argumento"
