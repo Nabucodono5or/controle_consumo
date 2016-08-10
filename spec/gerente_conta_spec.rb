@@ -14,13 +14,6 @@ describe GerenteContas do
   let(:conta) { double("conta") }
 
   describe "#entrada de dados" do
-
-    it "armazena o número de leitura da conta como argumento" do
-      expect(gerente_contas).to respond_to(:entrada_de_dados).with(3).arguments
-
-      gerente_contas.entrada_de_dados(460, 206.43, 4166)
-    end
-
     it "armazena o mes como argumento" do
       expect(gerente_contas).to respond_to(:entrada_de_dados).with(4).arguments
 
