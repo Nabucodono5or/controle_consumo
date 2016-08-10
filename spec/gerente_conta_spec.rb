@@ -5,25 +5,32 @@ require 'spec_helper'
 
 describe GerenteContas do
   # implementaremos testes dos métodos
+  # testaremos se todos os argumentos foram enviados/recebidos
+  # testaremos se o array da inicialização é incrementado
+  # testaremos se possível a inicialização da classe ContaLuz
+  # testaremos os métodos de comparação de contas
 
   subject(:gerente_contas) { GerenteContas.new() }
+  let(:conta) { double("conta") }
 
   describe "#entrada de dados" do
+
     context '#entrada_de_dados para kw gasto' do
-      it "aramazena a quantidade de kw Gasto dado" do
-        qtd = 460
-        gerente_contas.entrada_de_dados(460)
-
-        expect(gerente_contas.qtd_kw_gasto).to eq(qtd)
-
-        gerente_contas.qtd_kw_gasto
+      before do
+        allow(conta).to receive(:qtd_kw_gasto).and_return(460)
       end
 
-      it "impede que tenha acesso a qtd_kw_gasto" do
-        qtd = 460
+      it "aramazena a quantidade de kw Gasto dado" do
+
+        expect(gerente_contas).to respond_to(:entrada_de_dados)
+
+        gerente_contas.entrada_de_dados(460)
+      end
+
+      it "impede que tenha acesso a qtd_kw_gasto um método para acessar o dado de entrada" do
         gerente_contas.entrada_de_dados(460)
 
-        expect{ gerente_contas.qtd_kw_gasto }.to raise_error(NoMethodError)
+        expect(gerente_contas).not_to respond_to(:qtd_kw_gasto)
       end
     end
 
