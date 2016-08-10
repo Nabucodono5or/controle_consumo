@@ -15,26 +15,6 @@ describe GerenteContas do
 
   describe "#entrada de dados" do
 
-    context '#entrada_de_dados para kw gasto' do
-      before do
-        allow(conta).to receive(:qtd_kw_gasto).and_return(460)
-      end
-
-      it "aramazena a quantidade de kw Gasto dado" do
-
-        expect(gerente_contas).to respond_to(:entrada_de_dados)
-
-        gerente_contas.entrada_de_dados(460)
-      end
-
-      # isso foi um teste para verificar a entrada de dados, o method qtd_kw_gasto era temporário
-      it "impede que tenha acesso a qtd_kw_gasto um método para acessar o dado de entrada" do
-        gerente_contas.entrada_de_dados(460)
-
-        expect(gerente_contas).not_to respond_to(:qtd_kw_gasto)
-      end
-    end
-
     it "armazena a quantidade de valor a pagar como argumento" do
       expect(gerente_contas).to respond_to(:entrada_de_dados).with(2).arguments
 

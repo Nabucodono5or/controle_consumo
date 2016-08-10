@@ -13,8 +13,9 @@ class GerenteContas
   end
 
 # principal entrada de dados das contas
-  def entrada_de_dados(qtd)
+  def entrada_de_dados(qtd, valorPagar)
     @conta.qtd_kw_gasto = qtd
+    @conta.valor_pagar = valorPagar
   end
 
 end
