@@ -19,7 +19,11 @@ describe GerenteContas do
 
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6)
     end
-    it "armazena o ano como argumento"
+    it "armazena o ano como argumento" do
+      expect(gerente_contas).to respond_to(:entrada_de_dados).with(5).arguments
+
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005)
+    end
     it "aramazena a data de emissao como argumento"
     it "armazena a data de vencimento como argumento"
   end
