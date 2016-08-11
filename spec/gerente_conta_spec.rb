@@ -58,7 +58,9 @@ describe GerenteContas do
       gerente_contas.mes_menor_consumo
     end
 
-    it "levanta um erro caso não haja entrada de dados, ou seja a lista de contas é nula"
+    it "levanta um erro caso não haja entrada de dados, ou seja a lista de contas é nula" do
+      expect{ gerente_contas.mes_menor_consumo }.to raise_error (RuntimeError)
+    end
     it "compara o qtdKwGasto entre todas as contas na lista de contas"
     it "retorna uma variavel com o resultado da conta de menor consumo"
   end

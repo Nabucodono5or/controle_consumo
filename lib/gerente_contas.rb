@@ -26,8 +26,10 @@ class GerenteContas
   end
 
   def mes_menor_consumo
-    if @listaContas.length <= 1
+    if @listaContas.length == 1
       @listaContas[0].qtd_kw_gasto
+    elsif @listaContas == []
+      raise RuntimeError, "Nenhuma conta cadastrada"
     end
   end
 end
