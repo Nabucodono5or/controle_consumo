@@ -25,4 +25,9 @@ class GerenteContas
     @listaContas << @conta
   end
 
+  def mes_menor_consumo
+    if @listaContas.length <= 1
+      @listaContas[0].qtd_kw_gasto
+    end
+  end
 end
