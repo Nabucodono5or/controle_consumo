@@ -6,15 +6,15 @@ require 'conta_luz'
 
 class GerenteContas
 
-  attr_reader :total
 # inicializa o array de contas
   def initialize()
     @listaContas = []
-    @conta = ContaLuz.new
   end
 
 # principal entrada de dados das contas
   def entrada_de_dados(qtd, valorPagar, numeroLeitura, mes, ano, emissao, vencimento)
+    @conta = ContaLuz.new
+
     @conta.qtd_kw_gasto = qtd
     @conta.valor_pagar = valorPagar
     @conta.numero_leitura = numeroLeitura
@@ -32,14 +32,7 @@ class GerenteContas
     elsif @listaContas == []
       raise RuntimeError, "Nenhuma conta cadastrada"
     else
-      @listaContas.each do |x|
-        @total ||= x.qtd_kw_gasto
-
-        if x.qtd_kw_gasto < total
-          @total = x..qtd_kw_gasto
-        end
-      end
-      total
+      total ||= @listaContas[0].qtd_kw_gasto
     end
   end#fim do método mes_menor_consumo
 end

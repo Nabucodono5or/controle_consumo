@@ -14,12 +14,6 @@ describe GerenteContas do
   subject(:gerente_contas) { GerenteContas.new() }
 
   describe "#initialize" do
-    # Não identifiquei nenhum método melhor para testar se existe uma instancia
-    # da classe ContaLuz sem chamá-la ao teste
-    it "instacia uma conta de luz" do
-      expect(gerente_contas.instance_variable_get(:@conta)).not_to eql(nil)
-    end
-
     # a princípio a lista será privada
     it "A lista de contas deve estar vazia" do
       expect(gerente_contas.instance_variable_get(:@listaContas)).to be_empty
@@ -27,6 +21,14 @@ describe GerenteContas do
   end
 
   describe "#entrada de dados" do
+    # Não identifiquei nenhum método melhor para testar se existe uma instancia
+    # da classe ContaLuz sem chamá-la ao teste
+    it "instacia uma conta de luz" do
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+
+      expect(gerente_contas.instance_variable_get(:@conta)).not_to eql(nil)
+    end
+
     it "armazena sete argumentos lançados para serem instaciados em uma classe" do
       expect(gerente_contas).to respond_to(:entrada_de_dados).with(7).arguments
 
@@ -45,6 +47,8 @@ describe GerenteContas do
       lista = gerente_contas.instance_variable_get(:@listaContas)
 
       expect(lista.length).to be > 1
+
+      lista.length
     end
   end
 
@@ -62,9 +66,10 @@ describe GerenteContas do
       expect{ gerente_contas.mes_menor_consumo }.to raise_error (RuntimeError)
     end
 
-    it "compara o qtdKwGasto entre todas as contas na lista de contas" do
+    xit "compara o qtdKwGasto entre todas as contas na lista de contas" do
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
       gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
+      gerente_contas.entrada_de_dados(150, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
 
       expect(gerente_contas.mes_menor_consumo).to eq(350)
 
