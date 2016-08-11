@@ -38,5 +38,13 @@ describe GerenteContas do
 
       expect(gerente_contas.instance_variable_get(:@listaContas)).not_to be_empty
     end
+
+    it "O array será incrementado em dois" do
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+      gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
+      lista = gerente_contas.instance_variable_get(:@listaContas)
+
+      expect(lista.length).to be > 1
+    end
   end
 end
