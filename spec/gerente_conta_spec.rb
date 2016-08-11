@@ -49,7 +49,16 @@ describe GerenteContas do
   end
 
   describe "#vereficarMesMenorConsumo" do
-    it "somente compara caso haja mais de duas contas adicionadas"
+    it "retorna o valor de uma conta se somente ela é a única cadastrada" do
+      menor = 460
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+
+      expect(gerente_contas.mes_menor_consumo).to eq(menor)
+
+      gerente_contas.mes_menor_consumo
+    end
+
+    it "levanta um erro caso não haja entrada de dados"
     it "compara o qtdKwGasto entre todas as contas na lista de contas"
     it "retorna uma variavel com o resultado da conta de menor consumo"
   end
