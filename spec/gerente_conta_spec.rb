@@ -61,7 +61,18 @@ describe GerenteContas do
     it "levanta um erro caso não haja entrada de dados, ou seja a lista de contas é nula" do
       expect{ gerente_contas.mes_menor_consumo }.to raise_error (RuntimeError)
     end
-    it "compara o qtdKwGasto entre todas as contas na lista de contas"
-    it "retorna uma variavel com o resultado da conta de menor consumo"
+
+    it "compara o qtdKwGasto entre todas as contas na lista de contas" do
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+      gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
+
+      expect(gerente_contas.mes_menor_consumo).to eq(350)
+
+      gerente_contas.mes_menor_consumo
+    end
+
+    it "retorna uma variavel com o resultado da conta de menor consumo" do
+
+    end
   end
 end
