@@ -32,14 +32,21 @@ class GerenteContas
     elsif @listaContas == []
       raise RuntimeError, "Nenhuma conta cadastrada"
     else
-      total ||= @listaContas[0].qtd_kw_gasto
-
-      @listaContas.each do |x|
-        if x.qtd_kw_gasto < total
-          total = x.qtd_kw_gasto
-        end
-      end
-      total
+      calculo_mes_menor
     end
   end#fim do método mes_menor_consumo
+
+  private
+
+  def calculo_mes_menor
+    total ||= @listaContas[0].qtd_kw_gasto
+
+    @listaContas.each do |conta|
+      if conta.qtd_kw_gasto < total
+        total = conta.qtd_kw_gasto
+      end
+    end
+
+    total
+  end
 end

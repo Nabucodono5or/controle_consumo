@@ -20,7 +20,7 @@ describe GerenteContas do
     end
   end
 
-  describe "#entrada de dados" do
+  describe "#entrada_de_dados" do
     # Não identifiquei nenhum método melhor para testar se existe uma instancia
     # da classe ContaLuz sem chamá-la ao teste
     it "instacia uma conta de luz" do
@@ -52,7 +52,7 @@ describe GerenteContas do
     end
   end
 
-  describe "#vereficarMesMenorConsumo" do
+  describe "#mes_menor_consumo" do
     it "retorna o valor de uma conta se somente ela é a única cadastrada" do
       menor = 460
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
