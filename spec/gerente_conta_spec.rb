@@ -9,7 +9,7 @@ describe GerenteContas do
   # testaremos se inicializamos uma conta de luz (passed)
   # testaremos se o array da inicialização é incrementado (passed)
   # testaremos se possível a inicialização da classe ContaLuz (passed)
-  # testaremos os métodos de comparação de contas
+  # testaremos os métodos de comparação de contas (passed)
   # devemos acrescentar transferência de dados extras para possíveis exigências
 
   subject(:gerente_contas) { GerenteContas.new() }

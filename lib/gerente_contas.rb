@@ -26,23 +26,11 @@ class GerenteContas
   end
 
   def mes_menor_consumo
-    if @listaContas.length == 1
-      @listaContas[0].qtd_kw_gasto
-    elsif @listaContas == []
-      raise RuntimeError, "Nenhuma conta cadastrada"
-    else
-      calculo_mes_menor
-    end
+    calculo_mes_menor unless testando_lista_de_contas
   end#fim do método mes_menor_consumo
 
   def mes_maior_consumo
-    if @listaContas.length == 1
-      @listaContas[0].qtd_kw_gasto
-    elsif @listaContas == []
-      raise RuntimeError, "Nenhuma conta cadastrada"
-    else
-      calculo_mes_maior
-    end
+    calculo_mes_maior unless testando_lista_de_contas
   end
 
   private
@@ -69,5 +57,11 @@ class GerenteContas
     end
 
     total
+  end
+
+  def testando_lista_de_contas
+    if @listaContas == []
+      raise RuntimeError, "Nenhuma conta cadastrada"
+    end
   end
 end
