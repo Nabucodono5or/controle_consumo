@@ -78,7 +78,15 @@ describe GerenteContas do
   end
 
   describe "#mes_maior_consumo" do
-    it "retorna o valor de maior consumo sem calculo caso aja uma única conta cadastrada"
+    it "retorna o valor de maior consumo sem calculo caso aja uma única conta cadastrada" do
+      maior = 460
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+
+      expect(gerente_contas.mes_maior_consumo).to eq(maior)
+
+      gerente_contas.mes_maior_consumo
+    end
+    
     it "levanta um erro quando a lista de contas ainda está nula"
     it "compara o qtdKwGasto de maior consumo entre todas as contas na lista de contas"
   end
