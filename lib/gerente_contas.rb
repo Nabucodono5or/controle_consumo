@@ -5,13 +5,12 @@
 require 'conta_luz'
 
 class GerenteContas
-
-# inicializa o array de contas
+  # inicializa o array de contas
   def initialize()
     @listaContas = []
   end
 
-# principal entrada de dados das contas
+  # principal entrada de dados das contas
   def entrada_de_dados(qtd, valorPagar, numeroLeitura, mes, ano, emissao, vencimento)
     @conta = ContaLuz.new
 
@@ -40,7 +39,9 @@ class GerenteContas
     if @listaContas.length == 1
       @listaContas[0].qtd_kw_gasto
     elsif @listaContas == []
-      raise RuntimeError, "Nenhuma conta cadastrada"  
+      raise RuntimeError, "Nenhuma conta cadastrada"
+    else
+      calculo_mes_maior
     end
   end
 
@@ -51,6 +52,18 @@ class GerenteContas
 
     @listaContas.each do |conta|
       if conta.qtd_kw_gasto < total
+        total = conta.qtd_kw_gasto
+      end
+    end
+
+    total
+  end
+
+  def calculo_mes_maior
+    total ||= @listaContas[0].qtd_kw_gasto
+
+    @listaContas.each do |conta|
+      if conta.qtd_kw_gasto > total
         total = conta.qtd_kw_gasto
       end
     end
