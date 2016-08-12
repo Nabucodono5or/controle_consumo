@@ -86,8 +86,10 @@ describe GerenteContas do
 
       gerente_contas.mes_maior_consumo
     end
-    
-    it "levanta um erro quando a lista de contas ainda está nula"
+
+    it "levanta um erro quando a lista de contas ainda está nula" do
+      expect{ gerente_contas.mes_maior_consumo }.to raise_error(RuntimeError)
+    end
     it "compara o qtdKwGasto de maior consumo entre todas as contas na lista de contas"
   end
 end
