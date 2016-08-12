@@ -35,6 +35,10 @@ class GerenteContas
 
   private
 
+  # calculo_mes_menor e  calculo_mes_maior ambos repetem a mesma linha de calculo
+  # isso pode ser melhorado com a criação de um novo método privado que trata o calculo de
+  # maior ou menor consumo diferenciando apenas nas variáveis/ porém isso trata de
+  # ter acumular vairáveis de instacia
   def calculo_mes_menor
     total ||= @listaContas[0].qtd_kw_gasto
 
