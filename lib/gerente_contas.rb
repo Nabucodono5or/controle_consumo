@@ -36,6 +36,12 @@ class GerenteContas
     end
   end#fim do método mes_menor_consumo
 
+  def mes_maior_consumo
+    if @listaContas.length == 1
+      @listaContas[0].qtd_kw_gasto
+    end  
+  end
+
   private
 
   def calculo_mes_menor
