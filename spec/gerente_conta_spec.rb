@@ -54,13 +54,11 @@ describe GerenteContas do
   end
 
   describe "#mes_menor_consumo" do
-    it "retorna o valor de menor consumo sem calculo caso aja uma única conta cadastrada" do
-      menor = 460
+    it "retorna a conta de menor consumo sem calculo caso haja uma única conta cadastrada" do
+      menor = "Mes 6, consumo de 460 kw/h\n"
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
 
-      expect(gerente_contas.mes_menor_consumo).to eq(menor)
-
-      gerente_contas.mes_menor_consumo
+      expect{ gerente_contas.mes_menor_consumo }.to output(menor).to_stdout
     end
 
     it "levanta um erro caso não haja entrada de dados, ou seja a lista de contas é nula" do
@@ -71,20 +69,16 @@ describe GerenteContas do
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
       gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
 
-      expect(gerente_contas.mes_menor_consumo).to eq(350)
-
-      gerente_contas.mes_menor_consumo
+      expect{ gerente_contas.mes_menor_consumo }.to output("Mes 8, consumo de 350 kw/h\n").to_stdout
     end
   end
 
   describe "#mes_maior_consumo" do
     it "retorna o valor de maior consumo sem calculo caso aja uma única conta cadastrada" do
-      maior = 460
+      maior = "Mes 6, consumo de 460 kw/h\n"
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
 
-      expect(gerente_contas.mes_maior_consumo).to eq(maior)
-
-      gerente_contas.mes_maior_consumo
+      expect{ gerente_contas.mes_maior_consumo }.to output(maior).to_stdout
     end
 
     it "levanta um erro quando a lista de contas ainda está nula" do
@@ -95,9 +89,7 @@ describe GerenteContas do
       gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
       gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
 
-      expect(gerente_contas.mes_maior_consumo).to eq(460)
-
-      gerente_contas.mes_maior_consumo
+      expect{ gerente_contas.mes_maior_consumo }.to output("Mes 6, consumo de 460 kw/h\n").to_stdout
     end
   end
 end
