@@ -40,27 +40,27 @@ class GerenteContas
   # maior ou menor consumo diferenciando apenas nas variáveis/ porém isso trata de
   # ter acumular vairáveis de instacia
   def calculo_mes_menor
-    total ||= @listaContas[0]
+    menor ||= @listaContas[0]
 
     @listaContas.each do |conta|
-      if conta.qtd_kw_gasto < total.qtd_kw_gasto
-        total = conta
+      if conta.qtd_kw_gasto < menor.qtd_kw_gasto
+        menor = conta
       end
     end
 
-    puts "Mes #{total.mes}, consumo de #{total.qtd_kw_gasto} kw/h"
+    puts "Mes #{menor.mes}, consumo de #{menor.qtd_kw_gasto} kw/h"
   end
 
   def calculo_mes_maior
-    total ||= @listaContas[0]
+    maior ||= @listaContas[0]
 
     @listaContas.each do |conta|
-      if conta.qtd_kw_gasto > total.qtd_kw_gasto
-        total = conta
+      if conta.qtd_kw_gasto > maior.qtd_kw_gasto
+        maior = conta
       end
     end
 
-    puts "Mes #{total.mes}, consumo de #{total.qtd_kw_gasto} kw/h"
+    puts "Mes #{maior.mes}, consumo de #{maior.qtd_kw_gasto} kw/h"
   end
 
   def testando_lista_de_contas
