@@ -11,16 +11,16 @@ class GerenteContas
   end
 
   # principal entrada de dados das contas
-  def entrada_de_dados(qtd, valorPagar, numeroLeitura, mes, ano, emissao, vencimento)
+  def entrada_de_dados(*args)
     @conta = ContaLuz.new
 
-    @conta.qtd_kw_gasto = qtd
-    @conta.valor_pagar = valorPagar
-    @conta.numero_leitura = numeroLeitura
-    @conta.mes = mes
-    @conta.ano = ano
-    @conta.emissao = emissao
-    @conta.vencimento = vencimento
+    @conta.qtd_kw_gasto = args[0]
+    @conta.valor_pagar = args[1]
+    @conta.numero_leitura = args[2]
+    @conta.mes = args[3]
+    @conta.ano = args[4]
+    @conta.emissao = args[5]
+    @conta.vencimento = args[6]
 
     @listaContas << @conta
   end
