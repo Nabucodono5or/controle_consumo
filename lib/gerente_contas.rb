@@ -54,7 +54,7 @@ class GerenteContas
       end
 
     else
-      raise RuntimeError, "Nenhuma conta cadastrada"
+      raise 'Nenhuma conta cadastrada'
     end
   end
 end
