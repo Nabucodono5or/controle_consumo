@@ -48,7 +48,7 @@ class GerenteContas
       end
     end
 
-    puts "Mes #{menor.mes}, consumo de #{menor.qtd_kw_gasto} kw/h"
+    puts "Mes #{menor.nominal}, consumo de #{menor.qtd_kw_gasto} kw/h"
   end
 
   def calculo_mes_maior
@@ -60,7 +60,7 @@ class GerenteContas
       end
     end
 
-    puts "Mes #{maior.mes}, consumo de #{maior.qtd_kw_gasto} kw/h"
+    puts "Mes #{maior.nominal}, consumo de #{maior.qtd_kw_gasto} kw/h"
   end
 
   def testando_lista_de_contas
