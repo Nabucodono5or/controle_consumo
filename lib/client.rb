@@ -7,6 +7,12 @@ class Client
     @cli_ui = CLiUi.new
   end
 
+  def mensagem_inicial
+    texto = 'mensagem inicial'
+
+    @cli_ui.write(texto)
+  end
+
   def menu
     texto = 'será exibido um menu aqui'
 
