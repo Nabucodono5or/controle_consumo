@@ -18,4 +18,12 @@ class Client
 
     @cli_ui.write(texto)
   end
+
+  def responde_menu(op)
+    @gerente_contas = GerenteContas.new
+    case op
+    when op == 2
+      @gerente_contas.mes_menor_consumo
+    end
+  end
 end
