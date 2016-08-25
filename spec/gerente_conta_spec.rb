@@ -85,4 +85,13 @@ describe GerenteContas do
       expect{ gerente_contas.mes_maior_consumo }.to output("Mes Julho, consumo de 460 kw/h\n").to_stdout
     end
   end
+
+  describe "#lista_contas" do
+    it "deveria retornar um array com duas contas" do
+      gerente_contas.entrada_de_dados(460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005")
+      gerente_contas.entrada_de_dados(350, 157.07, 4201, 8, 2005, "02/08/2005", "15/08/2005")
+
+      expect(gerente_contas.lista_contas.length).to eq(2)
+    end
+  end
 end

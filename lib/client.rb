@@ -34,7 +34,17 @@ class Client
   end
 
   # responsável por setar a classe gerente
+
   def gerente_contas(*args)
     @gerente_contas = GerenteContas.new
+    # @gerente_contas.entrada_de_dados(args)
+  end
+
+  private
+
+  def listar_contas
+    @gerente_contas.lista_contas.each do |conta|
+      puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
+    end
   end
 end

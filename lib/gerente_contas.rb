@@ -5,6 +5,8 @@ require 'conta_luz'
 
 # Gerencia o acesso as contas e seu armazenamento
 class GerenteContas
+  attr_reader :lista_contas
+
   # inicializa o array de contas
   def initialize
     @lista_contas = []
