@@ -22,9 +22,12 @@ class Client
 
   def responde_menu(op)
     gerente_contas
+
     case op
     when op == 2
       @gerente_contas.mes_menor_consumo
+    when op == 3
+      @gerente_contas.mes_maior_consumo
     end
   end
 

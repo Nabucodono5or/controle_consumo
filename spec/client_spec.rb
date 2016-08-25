@@ -24,14 +24,8 @@ describe Client do
 
 
   describe '#responde_menu' do
-    before do
-      texto = "Mes Julho, consumo de 460 kw/h\n"
-
-      allow(client.responde_menu(2)).to receive(:mes_menor_consumo).and_return(puts("Mes Julho, consumo de 460 kw/h"))
-    end
-
     it 'se eu insiro o valor 1 chamo o método entrada_de_dados da classe gerente_contas'
-    it 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
+    xit 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
       texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 2
 
@@ -39,8 +33,13 @@ describe Client do
       expect{ client.responde_menu(num) }.to output(texto).to_stdout
     end
 
-    it 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo'
-    it 'se eu insiro o valor 4 chamo obtenho todas as contas cadastradas'
+    it 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do
+      texto = "Mes Julho, consumo de 460 kw/h\n"
+      num = 3
+
+      expect{ client.responde_menu(num) }.to output(texto).to_stdout
+    end
+    it 'se eu insiro o valor 4 obtenho todas as contas cadastradas'
   end
 
 end
