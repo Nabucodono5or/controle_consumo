@@ -24,7 +24,13 @@ describe Client do
 
 
   describe '#responde_menu' do
-    it 'se eu insiro o valor 1 chamo o método entrada_de_dados da classe gerente_contas'
+    it 'se eu insiro o valor 1 chamo o método cadeia_de_perguntas responsável pela entrada_de_dados' do
+      num = 1
+
+      expect(client.responde_menu(1)).to respond_to(:cadeia_de_perguntas)
+
+      client.responde_menu(num)
+    end
     xit 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
       texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 2
@@ -50,14 +56,6 @@ describe Client do
 
         client.responde_menu(4)
       end
-    end
-
-    it 'se eu insiro o valor 5 uma cadeia de perguntas se inicia por um metodo específico' do
-      num = 5
-
-      expect(client.responde_menu(5)).to respond_to(:cadeia_de_perguntas)
-
-      client.responde_menu(num)
     end
   end
 
