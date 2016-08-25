@@ -59,4 +59,35 @@ describe Client do
     end
   end
 
+  describe '#pergunta_um' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+
+  describe '#pergunta_dois' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+  describe '#pergunta_tres' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+  describe '#pergunta_quatro' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+  describe '#pergunta_cinco' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+  describe '#pergunta_seis' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+  describe '#pergunta_sete' do
+    it 'será exibido uma pergunta'
+    it 'armazenará uma entrada como resposta'
+  end
+
+
 end
