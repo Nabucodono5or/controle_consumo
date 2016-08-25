@@ -24,6 +24,8 @@ class Client
     gerente_contas
 
     case op
+    when op == 1
+      cadeia_de_perguntas
     when op == 2
       @gerente_contas.mes_menor_consumo
     when op == 3
@@ -42,9 +44,25 @@ class Client
 
   private
 
+  def cadeia_de_perguntas
+    while false
+      um = pergunta_um
+      dois = pergunta_dois
+      tres = pergunta_tres
+      quatro = pergunta_quatro
+      cinco = pergunta_cinco
+      seis = pergunta_seis
+      sete = pergunta_sete
+    end
+  end
+
   def listar_contas
     @gerente_contas.lista_contas.each do |conta|
       puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
     end
+  end
+
+  def pergunta_um
+
   end
 end

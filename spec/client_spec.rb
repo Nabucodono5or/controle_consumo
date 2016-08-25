@@ -22,7 +22,6 @@ describe Client do
     end
   end
 
-
   describe '#responde_menu' do
     it 'se eu insiro o valor 1 chamo o método cadeia_de_perguntas responsável pela entrada_de_dados' do
       num = 1
@@ -31,6 +30,7 @@ describe Client do
 
       client.responde_menu(num)
     end
+
     xit 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
       texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 2
