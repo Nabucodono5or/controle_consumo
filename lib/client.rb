@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
 require 'cli_ui'
+require 'gerente_contas'
 
 class Client
   def initialize
@@ -20,10 +21,14 @@ class Client
   end
 
   def responde_menu(op)
-    @gerente_contas = GerenteContas.new
+    gerente_contas
     case op
     when op == 2
       @gerente_contas.mes_menor_consumo
     end
+  end
+
+  def gerente_contas(*args)
+    @gerente_contas = GerenteContas.new
   end
 end
