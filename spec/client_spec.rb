@@ -39,12 +39,25 @@ describe Client do
 
       expect{ client.responde_menu(num) }.to output(texto).to_stdout
     end
-    xit 'se eu insiro o valor 4 obtenho todas as contas cadastradas' do
-      num = 4
 
-      expect( client.responde_menu(num)).to respond_to(:listar_contas)
+    context 'se eu insiro o valor 4' do
+      it 'e não obtenho contas cadstradas uma mensagem é levantada'
 
-      client.responde_menu(4)
+      xit ' obtenho todas as contas cadastradas' do
+        num = 4
+
+        expect(client.responde_menu(num)).to respond_to(:listar_contas)
+
+        client.responde_menu(4)
+      end
+    end
+
+    it 'se eu insiro o valor 5 uma cadeia de perguntas se inicia por um metodo específico' do
+      num = 5
+
+      expect(client.responde_menu(5)).to respond_to(:cadeia_de_perguntas)
+
+      client.responde_menu(num)
     end
   end
 
