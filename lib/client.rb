@@ -28,9 +28,12 @@ class Client
       @gerente_contas.mes_menor_consumo
     when op == 3
       @gerente_contas.mes_maior_consumo
+    when op == 4
+      listar_contas
     end
   end
 
+  # responsável por setar a classe gerente
   def gerente_contas(*args)
     @gerente_contas = GerenteContas.new
   end

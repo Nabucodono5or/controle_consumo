@@ -33,13 +33,19 @@ describe Client do
       expect{ client.responde_menu(num) }.to output(texto).to_stdout
     end
 
-    it 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do
+    xit 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do
       texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 3
 
       expect{ client.responde_menu(num) }.to output(texto).to_stdout
     end
-    it 'se eu insiro o valor 4 obtenho todas as contas cadastradas'
+    it 'se eu insiro o valor 4 obtenho todas as contas cadastradas' do
+      num = 4
+
+      expect( client.responde_menu(num)).to respond_to(:listar_contas)
+
+      client.responde_menu(4)
+    end
   end
 
 end
