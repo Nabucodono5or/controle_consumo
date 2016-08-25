@@ -53,6 +53,8 @@ class Client
       cinco = pergunta_cinco
       seis = pergunta_seis
       sete = pergunta_sete
+
+      lista_resposta[um, dois, tres, quatro, cinco, seis, sete]
     end
   end
 
