@@ -26,7 +26,7 @@ describe Client do
     it 'se eu insiro o valor 1 chamo o método cadeia_de_perguntas responsável pela entrada_de_dados' do
       num = 1
 
-      expect(client.responde_menu(1)).to respond_to(:cadeia_de_perguntas)
+      expect(client).to receive(:cadeia_de_perguntas)
 
       client.responde_menu(num)
     end
@@ -60,7 +60,14 @@ describe Client do
   end
 
   describe '#pergunta_um' do
-    it 'será exibido uma pergunta'
+    it 'será exibido uma pergunta' do
+      num = 1
+      pergunta = "uma pergunta"
+
+      expect(client.responde_menu(num)).to eq(pergunta)
+
+      client.responde_menu(1)
+    end
     it 'armazenará uma entrada como resposta'
   end
 
@@ -88,6 +95,4 @@ describe Client do
     it 'será exibido uma pergunta'
     it 'armazenará uma entrada como resposta'
   end
-
-
 end

@@ -24,14 +24,14 @@ class Client
     gerente_contas
 
     case op
-    when op == 1
+    when 1
       cadeia_de_perguntas
-    when op == 2
-      @gerente_contas.mes_menor_consumo
-    when op == 3
-      @gerente_contas.mes_maior_consumo
-    when op == 4
-      listar_contas
+    when 2
+    #  @gerente_contas.mes_menor_consumo
+    when 3
+    #  @gerente_contas.mes_maior_consumo
+    when 4
+    #  listar_contas
     end
   end
 
@@ -45,16 +45,19 @@ class Client
   private
 
   def cadeia_de_perguntas
-    while false
-      um = pergunta_um
-      dois = pergunta_dois
-      tres = pergunta_tres
-      quatro = pergunta_quatro
-      cinco = pergunta_cinco
-      seis = pergunta_seis
-      sete = pergunta_sete
+    controle = true
 
-      lista_resposta[um, dois, tres, quatro, cinco, seis, sete]
+    while controle
+      return pergunta_um
+      # dois = pergunta_dois
+      # tres = pergunta_tres
+      # quatro = pergunta_quatro
+      # cinco = pergunta_cinco
+      # seis = pergunta_seis
+      # sete = pergunta_sete
+
+      # lista_resposta[um, dois, tres, quatro, cinco, seis, sete]
+      controle = false
     end
   end
 
@@ -65,6 +68,6 @@ class Client
   end
 
   def pergunta_um
-
+    'uma pergunta'
   end
 end
