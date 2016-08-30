@@ -3,6 +3,7 @@
 require 'cli_ui'
 require 'gerente_contas'
 
+#responsável por todos os comportamentos do menu 
 class Client
   def initialize
     @cli_ui = CLiUi.new
@@ -44,12 +45,10 @@ class Client
 
   private
 
+  # refatorar todo o cadeia de perguntas
   def cadeia_de_perguntas
-    controle = true
 
-    while controle
-      return pergunta_um
-      # dois = pergunta_dois
+      return pergunta_um, pergunta_dois
       # tres = pergunta_tres
       # quatro = pergunta_quatro
       # cinco = pergunta_cinco
@@ -57,8 +56,6 @@ class Client
       # sete = pergunta_sete
 
       # lista_resposta[um, dois, tres, quatro, cinco, seis, sete]
-      controle = false
-    end
   end
 
   def listar_contas
@@ -67,7 +64,13 @@ class Client
     end
   end
 
+  # métodos da cadeia de perguntas, serão implementados aqui
+
   def pergunta_um
     'uma pergunta'
+  end
+
+  def pergunta_dois
+    'segunda pergunta'
   end
 end

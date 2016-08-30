@@ -64,7 +64,7 @@ describe Client do
       num = 1
       pergunta = "uma pergunta"
 
-      expect(client.responde_menu(num)).to eq(pergunta)
+      expect(client.responde_menu(num)).to include(pergunta)
 
       client.responde_menu(1)
     end
@@ -72,7 +72,14 @@ describe Client do
   end
 
   describe '#pergunta_dois' do
-    it 'será exibido uma pergunta'
+    it 'será exibido uma pergunta' do
+      num = 1
+      pergunta = "segunda pergunta"
+
+      expect(client.responde_menu(num)).to include(pergunta)
+
+      client.responde_menu(1)
+    end
     it 'armazenará uma entrada como resposta'
   end
   describe '#pergunta_tres' do
