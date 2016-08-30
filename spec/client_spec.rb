@@ -61,18 +61,16 @@ describe Client do
 
   # teste do método cadeia_de_perguntas que leva a uma sequência de perguntas e respostas
   context '#cadeia_de_perguntas' do
+    before do
+      expect(client).to receive(:gets).and_return("uma resposta").exactly(7).times
+    end
+
     describe '#pergunta_um' do
       it 'será exibido uma pergunta' do
         num = 1
         pergunta = "uma pergunta\n"
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
-      end
-
-      it 'armazenará uma entrada como resposta' do
-        client.responde_menu(1)
-        
-        expect(client.instance_variable_get(:@lista_resposta)).not_to eql(nil)
       end
     end
 
@@ -83,8 +81,6 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-
-      it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_tres' do
@@ -94,7 +90,6 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_quatro' do
@@ -104,7 +99,6 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_cinco' do
@@ -114,7 +108,6 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_seis' do
@@ -124,7 +117,6 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_sete' do
@@ -134,7 +126,16 @@ describe Client do
 
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
+    end
+
+    describe '#@lista_resposta' do
+      it 'armazenará uma entrada como resposta' do
+        client.responde_menu(1)
+
+        expect(client.instance_variable_get(:@lista_resposta)).not_to eql(nil)
+      end
+
+      it 'armazenará mais de uma resposta'
     end
   end
 end
