@@ -69,8 +69,10 @@ describe Client do
         expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
 
-      xit 'armazenará uma entrada como resposta' do
-
+      it 'armazenará uma entrada como resposta' do
+        client.responde_menu(1)
+        
+        expect(client.instance_variable_get(:@lista_resposta)).not_to eql(nil)
       end
     end
 

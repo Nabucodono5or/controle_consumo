@@ -13,7 +13,6 @@ class Perguntas
 
   def pergunta_um
     puts 'uma pergunta'
-    @um = gets.chomp
   end
 
   def pergunta_dois

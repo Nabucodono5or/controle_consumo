@@ -50,9 +50,12 @@ class Client
 
   def cadeia_de_perguntas
     perguntas = Perguntas.new
+    @lista_resposta = []
 
     perguntas.lista_acoes.each do |e|
       e
+      input = gets.chomp
+      @lista_resposta << input
     end
   end
 
