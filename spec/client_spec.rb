@@ -59,47 +59,90 @@ describe Client do
     end
   end
 
-  describe '#pergunta_um' do
-    it 'será exibido uma pergunta' do
-      num = 1
-      pergunta = "uma pergunta"
+  # teste do método cadeia_de_perguntas que leva a uma sequência de perguntas e respostas
+  context '#cadeia_de_perguntas' do
+    describe '#pergunta_um' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "uma pergunta"
 
-      expect(client.responde_menu(num)).to include(pergunta)
+        expect(client.responde_menu(num)).to include(pergunta)
 
-      client.responde_menu(1)
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
     end
-    it 'armazenará uma entrada como resposta'
-  end
 
-  describe '#pergunta_dois' do
-    it 'será exibido uma pergunta' do
-      num = 1
-      pergunta = "segunda pergunta"
+    describe '#pergunta_dois' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "segunda pergunta"
 
-      expect(client.responde_menu(num)).to include(pergunta)
+        expect(client.responde_menu(num)).to include(pergunta)
 
-      client.responde_menu(1)
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
     end
-    it 'armazenará uma entrada como resposta'
-  end
-  describe '#pergunta_tres' do
-    it 'será exibido uma pergunta'
-    it 'armazenará uma entrada como resposta'
-  end
-  describe '#pergunta_quatro' do
-    it 'será exibido uma pergunta'
-    it 'armazenará uma entrada como resposta'
-  end
-  describe '#pergunta_cinco' do
-    it 'será exibido uma pergunta'
-    it 'armazenará uma entrada como resposta'
-  end
-  describe '#pergunta_seis' do
-    it 'será exibido uma pergunta'
-    it 'armazenará uma entrada como resposta'
-  end
-  describe '#pergunta_sete' do
-    it 'será exibido uma pergunta'
-    it 'armazenará uma entrada como resposta'
+
+    describe '#pergunta_tres' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "terceira pergunta"
+
+        expect(client.responde_menu(num)).to include(pergunta)
+
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
+    end
+
+    describe '#pergunta_quatro' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "quarta pergunta"
+
+        expect(client.responde_menu(num)).to include(pergunta)
+
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
+    end
+
+    describe '#pergunta_cinco' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "quinta pergunta"
+
+        expect(client.responde_menu(num)).to include(pergunta)
+
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
+    end
+
+    describe '#pergunta_seis' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "sexta pergunta"
+
+        expect(client.responde_menu(num)).to include(pergunta)
+
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
+    end
+
+    describe '#pergunta_sete' do
+      it 'será exibido uma pergunta' do
+        num = 1
+        pergunta = "setima pergunta"
+
+        expect(client.responde_menu(num)).to include(pergunta)
+
+        client.responde_menu(1)
+      end
+      it 'armazenará uma entrada como resposta'
+    end
   end
 end

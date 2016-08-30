@@ -2,8 +2,11 @@
 
 require 'cli_ui'
 require 'gerente_contas'
+require 'perguntas'
 
-#responsável por todos os comportamentos do menu 
+# cli_ui vai sair para perguntas
+
+# responsável por todos os comportamentos do menu
 class Client
   def initialize
     @cli_ui = CLiUi.new
@@ -45,32 +48,15 @@ class Client
 
   private
 
-  # refatorar todo o cadeia de perguntas
   def cadeia_de_perguntas
+    perguntas = Perguntas.new
 
-      return pergunta_um, pergunta_dois
-      # tres = pergunta_tres
-      # quatro = pergunta_quatro
-      # cinco = pergunta_cinco
-      # seis = pergunta_seis
-      # sete = pergunta_sete
-
-      # lista_resposta[um, dois, tres, quatro, cinco, seis, sete]
+    perguntas.lista_acoes.each { |e| e }
   end
 
   def listar_contas
     @gerente_contas.lista_contas.each do |conta|
       puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
     end
-  end
-
-  # métodos da cadeia de perguntas, serão implementados aqui
-
-  def pergunta_um
-    'uma pergunta'
-  end
-
-  def pergunta_dois
-    'segunda pergunta'
   end
 end
