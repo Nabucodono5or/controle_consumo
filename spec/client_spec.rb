@@ -64,35 +64,33 @@ describe Client do
     describe '#pergunta_um' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "uma pergunta"
+        pergunta = "uma pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
-      it 'armazenará uma entrada como resposta'
+
+      xit 'armazenará uma entrada como resposta' do
+
+      end
     end
 
     describe '#pergunta_dois' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "segunda pergunta"
+        pergunta = "segunda pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
+
       it 'armazenará uma entrada como resposta'
     end
 
     describe '#pergunta_tres' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "terceira pergunta"
+        pergunta = "terceira pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
       it 'armazenará uma entrada como resposta'
     end
@@ -100,11 +98,9 @@ describe Client do
     describe '#pergunta_quatro' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "quarta pergunta"
+        pergunta = "quarta pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
       it 'armazenará uma entrada como resposta'
     end
@@ -112,11 +108,9 @@ describe Client do
     describe '#pergunta_cinco' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "quinta pergunta"
+        pergunta = "quinta pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
       it 'armazenará uma entrada como resposta'
     end
@@ -124,11 +118,9 @@ describe Client do
     describe '#pergunta_seis' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "sexta pergunta"
+        pergunta = "sexta pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
       it 'armazenará uma entrada como resposta'
     end
@@ -136,11 +128,9 @@ describe Client do
     describe '#pergunta_sete' do
       it 'será exibido uma pergunta' do
         num = 1
-        pergunta = "setima pergunta"
+        pergunta = "setima pergunta\n"
 
-        expect(client.responde_menu(num)).to include(pergunta)
-
-        client.responde_menu(1)
+        expect{ client.responde_menu(num) }.to output(include(pergunta)).to_stdout
       end
       it 'armazenará uma entrada como resposta'
     end

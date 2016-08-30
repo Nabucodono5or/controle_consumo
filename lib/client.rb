@@ -51,7 +51,9 @@ class Client
   def cadeia_de_perguntas
     perguntas = Perguntas.new
 
-    perguntas.lista_acoes.each { |e| e }
+    perguntas.lista_acoes.each do |e|
+      e
+    end
   end
 
   def listar_contas

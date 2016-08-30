@@ -12,30 +12,31 @@ class Perguntas
   end
 
   def pergunta_um
-    'uma pergunta'
+    puts 'uma pergunta'
+    @um = gets.chomp
   end
 
   def pergunta_dois
-    'segunda pergunta'
+    puts 'segunda pergunta'
   end
 
   def pergunta_tres
-    'terceira pergunta'
+    puts 'terceira pergunta'
   end
 
   def pergunta_quatro
-    'quarta pergunta'
+    puts 'quarta pergunta'
   end
 
   def pergunta_cinco
-    'quinta pergunta'
+    puts 'quinta pergunta'
   end
 
   def pergunta_seis
-    'sexta pergunta'
+    puts 'sexta pergunta'
   end
 
   def pergunta_sete
-    'setima pergunta'
+    puts 'setima pergunta'
   end
 end
