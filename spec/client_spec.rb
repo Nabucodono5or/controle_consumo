@@ -143,4 +143,10 @@ describe Client do
       end
     end
   end
+
+  describe '#gerente_contas' do
+    it 'instacia o @gerente_contas com a primeira conta'
+    it 'valida os dados de uma conta'
+    it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
+  end
 end
