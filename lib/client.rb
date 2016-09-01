@@ -46,6 +46,12 @@ class Client
     # @gerente_contas.entrada_de_dados(args)
   end
 
+  def listar_contas
+    @gerente_contas.lista_contas.each do |conta|
+      puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
+    end
+  end
+
   private
 
   def cadeia_de_perguntas
@@ -56,12 +62,6 @@ class Client
       e
       input = gets.chomp
       @lista_resposta << input
-    end
-  end
-
-  def listar_contas
-    @gerente_contas.lista_contas.each do |conta|
-      puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
     end
   end
 end
