@@ -145,6 +145,16 @@ describe Client do
   end
 
   describe '#gerente_contas' do
+    before do
+      expect(client).to receive(:gets).and_return("uma resposta") #qtd_kw_gasto
+      expect(client).to receive(:gets).and_return("uma resposta") #valor_pagar
+      expect(client).to receive(:gets).and_return("uma resposta") #numero_leitura
+      expect(client).to receive(:gets).and_return("uma resposta") #mes
+      expect(client).to receive(:gets).and_return("uma resposta") #ano
+      expect(client).to receive(:gets).and_return("uma resposta") #emissao
+      expect(client).to receive(:gets).and_return("uma resposta") #vencimento
+    end
+
     it 'instacia o @gerente_contas com a primeira conta' do
       client.gerente_contas
 
@@ -153,12 +163,12 @@ describe Client do
       client.listar_contas
     end
 
-    xit 'valida os dados de uma conta' do
+    it 'valida os dados de uma conta' do
       num = 1
 
       expect{ client.responde_menu(num) }.not_to raise_error
     end
-    
+
     it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
   end
 end
