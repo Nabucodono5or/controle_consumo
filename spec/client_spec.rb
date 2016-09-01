@@ -135,7 +135,12 @@ describe Client do
         expect(client.instance_variable_get(:@lista_resposta)).not_to eql(nil)
       end
 
-      it 'armazenará mais de uma resposta'
+      it 'armazenará mais de uma resposta' do
+        client.responde_menu(1)
+        numero = client.instance_variable_get(:@lista_resposta)
+
+        expect(numero.length).to be > 1
+      end
     end
   end
 end
