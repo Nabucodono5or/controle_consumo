@@ -152,14 +152,14 @@ describe Client do
       expect(client).to receive(:gets).and_return(4166) #numero_leitura
       expect(client).to receive(:gets).and_return(6) #mes
       expect(client).to receive(:gets).and_return(2005) #ano
-      expect(client).to receive(:gets).and_return("4/7/2005") #emissao
-      expect(client).to receive(:gets).and_return(15/07/2005) #vencimento
+      expect(client).to receive(:gets).and_return('4/07/2005') #emissao
+      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
     end
 
     it 'instacia o @gerente_contas com a primeira conta' do
-      client.gerente_contas
+      client.responde_menu(1)
 
-      expect(client.listar_contas).to eq("mes/ano consumo: qtd_kw_gasto}")
+      expect(client.listar_contas).to eq("6/2005 consumo: 460")
 
       client.listar_contas
     end

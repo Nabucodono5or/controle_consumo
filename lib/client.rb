@@ -10,6 +10,8 @@ require 'perguntas'
 class Client
   def initialize
     @cli_ui = CLiUi.new
+
+    @gerente_contas = GerenteContas.new
   end
 
   def mensagem_inicial
@@ -25,8 +27,6 @@ class Client
   end
 
   def responde_menu(op)
-    gerente_contas
-
     case op
     when 1
       cadeia_de_perguntas
@@ -41,9 +41,8 @@ class Client
 
   # responsável por setar a classe gerente
 
-  def gerente_contas(*args)
-    @gerente_contas = GerenteContas.new
-    # @gerente_contas.entrada_de_dados(args)
+  def gerente_contas(args)
+    @gerente_contas.entrada_de_dados(args)
   end
 
   def listar_contas
@@ -63,5 +62,25 @@ class Client
       input = gets
       @lista_resposta << input
     end
+
+    if valida_conta?(@lista_resposta)
+      gerente_contas(@lista_resposta)
+    end
+  end
+
+  # integer 0,2,3,4
+  # float 1
+  # date 5,6
+  def valida_conta?(lista)
+    valida = true
+    if lista[0,2].class && lista[3,4] != Fixnum
+      valida = false
+    elsif lista[1].class != Float
+      valida = false
+    elsif lista[5,6].class != String
+      valida = false
+    end
+
+    return valida
   end
 end
