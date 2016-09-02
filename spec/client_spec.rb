@@ -146,13 +146,14 @@ describe Client do
 
   describe '#gerente_contas' do
     before do
-      expect(client).to receive(:gets).and_return("uma resposta") #qtd_kw_gasto
-      expect(client).to receive(:gets).and_return("uma resposta") #valor_pagar
-      expect(client).to receive(:gets).and_return("uma resposta") #numero_leitura
-      expect(client).to receive(:gets).and_return("uma resposta") #mes
-      expect(client).to receive(:gets).and_return("uma resposta") #ano
-      expect(client).to receive(:gets).and_return("uma resposta") #emissao
-      expect(client).to receive(:gets).and_return("uma resposta") #vencimento
+      # 460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"
+      expect(client).to receive(:gets).and_return(460) #qtd_kw_gasto
+      expect(client).to receive(:gets).and_return(206.43) #valor_pagar
+      expect(client).to receive(:gets).and_return(4166) #numero_leitura
+      expect(client).to receive(:gets).and_return(6) #mes
+      expect(client).to receive(:gets).and_return(2005) #ano
+      expect(client).to receive(:gets).and_return("4/7/2005") #emissao
+      expect(client).to receive(:gets).and_return(15/07/2005) #vencimento
     end
 
     it 'instacia o @gerente_contas com a primeira conta' do

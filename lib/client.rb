@@ -60,7 +60,7 @@ class Client
 
     perguntas.lista_acoes.each do |e|
       e
-      input = gets.chomp
+      input = gets
       @lista_resposta << input
     end
   end
