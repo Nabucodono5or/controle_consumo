@@ -157,7 +157,6 @@ describe Client do
     end
 
     it 'instacia o @gerente_contas com a primeira conta' do
-      client.responde_menu(1)
 
       expect(client.listar_contas).to eq("6/2005 consumo: 460")
 

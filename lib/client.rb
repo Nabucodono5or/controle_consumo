@@ -54,8 +54,8 @@ class Client
   private
 
   def cadeia_de_perguntas
-    perguntas = Perguntas.new
     @lista_resposta = []
+    perguntas = Perguntas.new
 
     perguntas.lista_acoes.each do |e|
       e
@@ -65,8 +65,8 @@ class Client
 
     if valida_conta?(@lista_resposta)
       gerente_contas(@lista_resposta)
-    else
-      raise 'Nenhuma conta cadastrada'
+#    else
+#      raise 'Nenhuma conta cadastrada'
     end
   end
 
