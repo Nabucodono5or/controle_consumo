@@ -46,7 +46,7 @@ class Client
   end
 
   def listar_contas
-    @gerente_contas.lista_contas.each do |conta|
+    @gerente_contas.lista_contas.each do
       puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
     end
   end
@@ -65,6 +65,8 @@ class Client
 
     if valida_conta?(@lista_resposta)
       gerente_contas(@lista_resposta)
+    else
+      raise 'Nenhuma conta cadastrada'
     end
   end
 
