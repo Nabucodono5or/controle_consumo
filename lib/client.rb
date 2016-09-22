@@ -63,11 +63,11 @@ class Client
       @lista_resposta << input
     end
 
-    if valida_conta?(@lista_resposta)
-      gerente_contas(@lista_resposta)
+#    if valida_conta?(@lista_resposta)
+#      gerente_contas(@lista_resposta)
 #    else
 #      raise 'Nenhuma conta cadastrada'
-    end
+#    end
   end
 
   # integer 0,2,3,4
