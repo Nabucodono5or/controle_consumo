@@ -63,6 +63,8 @@ describe Client do
   context '#cadeia_de_perguntas' do
     before do
       expect(client).to receive(:gets).and_return("uma resposta").exactly(7).times
+      lista = [460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"]
+      allow(client).to receive(:gerente_contas)
     end
 
     describe '#pergunta_um' do
@@ -154,9 +156,8 @@ describe Client do
 #      expect(client).to receive(:gets).and_return(2005) #ano
 #      expect(client).to receive(:gets).and_return('4/07/2005') #emissao
 #      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
-      array = [460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"]
 
-      allow(client.instance_variable_get(:@lista_resposta)).to receive(:gets).and_return(array)
+    allow(client).to receive(:lista_resposta).and_return([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
     end
 
     it 'instacia o @gerente_contas com a primeira conta' do
