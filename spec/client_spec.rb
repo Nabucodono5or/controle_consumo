@@ -156,13 +156,10 @@ describe Client do
 #      expect(client).to receive(:gets).and_return(2005) #ano
 #      expect(client).to receive(:gets).and_return('4/07/2005') #emissao
 #      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
-
-    allow(client).to receive(:lista_resposta).and_return([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
     end
 
     it 'instacia o @gerente_contas com a primeira conta' do
-
-      expect(client.listar_contas).to eq("6/2005 consumo: 460")
+      expect(client).to receive(:listar_contas).and_return("6/2005 consumo: 460")
 
       client.listar_contas
     end
