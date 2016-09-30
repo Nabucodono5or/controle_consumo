@@ -164,8 +164,11 @@ describe Client do
       client.listar_contas
     end
 
-    xit 'valida os dados de uma conta' do
+    it 'valida os dados de uma conta' do
       num = 1
+      expect(client).to receive(:gets).and_return("uma resposta").exactly(7).times
+      allow(client).to receive(:lista_resposta).and_return([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
+      allow(client).to receive(:gerente_contas).with([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
 
       expect{ client.responde_menu(num) }.not_to raise_error
     end

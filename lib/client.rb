@@ -8,6 +8,8 @@ require 'perguntas'
 
 # responsável por todos os comportamentos do menu
 class Client
+  attr_reader :lista_resposta
+
   def initialize
     @cli_ui = CLiUi.new
 
@@ -35,7 +37,7 @@ class Client
     when 3
     #  @gerente_contas.mes_maior_consumo
     when 4
-    #  listar_contas
+      listar_contas
     end
   end
 
@@ -64,7 +66,7 @@ class Client
     end
 
 #    if valida_conta?(@lista_resposta)
-      gerente_contas(@lista_resposta)
+      gerente_contas(lista_resposta)
 #    else
 #      raise 'Nenhuma conta cadastrada'
 #    end
