@@ -159,19 +159,32 @@ describe Client do
 #      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
     end
 
-    it 'instacia o @gerente_contas com a primeira conta' do
+    xit 'instacia o @gerente_contas com a primeira conta' do
       expect(client).to receive(:listar_contas).and_return("6/2005 consumo: 460")
 
       client.listar_contas
     end
 
-    it 'valida os dados de uma conta' do
-      num = 1
-      expect(client).to receive(:gets).and_return("uma resposta").exactly(7).times
-      allow(client).to receive(:lista_resposta).and_return([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
-      allow(client).to receive(:gerente_contas).with([460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"])
+  end
 
-      expect{ client.responde_menu(num) }.not_to raise_error
+  describe '#valida_conta?' do
+    before do
+      expect(client).to receive(:gets).and_return(460)#qtd_kw_gasto
+      expect(client).to receive(:gets).and_return(206.43) #valor_pagar
+      expect(client).to receive(:gets).and_return(4166) #numero_leitura
+      expect(client).to receive(:gets).and_return(6) #mes
+      expect(client).to receive(:gets).and_return(2005) #ano
+      expect(client).to receive(:gets).and_return('4/07/2005') #emissao
+      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
+
+    end
+
+    it 'valida os dados de uma conta' do
+      lista = [460, 206.43, 4166, 6, 2005, "4/07/2005", "15/07/2005"]
+
+      expect(client).to receive(:valida_conta?).with(lista)
+
+      client.responde_menu(1)
     end
 
     it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
