@@ -65,11 +65,11 @@ class Client
       @lista_resposta << input
     end
 
-#    if valida_conta?(@lista_resposta)
+    if valida_conta?(@lista_resposta)
       gerente_contas(lista_resposta)
-#    else
-#      raise 'Nenhuma conta cadastrada'
-#    end
+    else
+      raise 'Nenhuma conta cadastrada'
+    end
   end
 
   # integer 0,2,3,4
@@ -77,11 +77,11 @@ class Client
   # date 5,6
   def valida_conta?(lista)
     valida = true
-    if lista[0,2].class && lista[3,4] != Fixnum
+    if lista[0].class && lista[2,3] != Fixnum
       valida = false
     elsif lista[1].class != Float
       valida = false
-    elsif lista[5,6].class != String
+    elsif lista[5,2].class != String
       valida = false
     end
 

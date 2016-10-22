@@ -65,6 +65,7 @@ describe Client do
       expect(client).to receive(:gets).and_return("uma resposta").exactly(7).times
       lista = [460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"]
       allow(client).to receive(:gerente_contas)
+      allow(client).to receive(:valida_conta?).and_return(true)
     end
 
     describe '#pergunta_um' do
