@@ -178,8 +178,10 @@ describe Client do
 
     end
 
-    it 'valida os dados de uma conta' do
+    it 'recebe os dados de uma conta para validar' do
       lista = [460, 206.43, 4166, 6, 2005, "4/07/2005", "15/07/2005"]
+      allow(client).to receive(:gerente_contas)
+      allow(client).to receive(:valida_conta?).and_return(true)
 
       expect(client).to receive(:valida_conta?).with(lista)
 
@@ -187,5 +189,6 @@ describe Client do
     end
 
     it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
+    it 'retorna true para os dados'
   end
 end

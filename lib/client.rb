@@ -66,7 +66,7 @@ class Client
     end
 
     if valida_conta?(@lista_resposta)
-      gerente_contas(lista_resposta)
+      gerente_contas(@lista_resposta)
     else
       raise 'Nenhuma conta cadastrada'
     end
