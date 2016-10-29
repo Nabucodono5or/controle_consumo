@@ -75,16 +75,17 @@ class Client
   # integer 0,2,3,4
   # float 1
   # date 5,6
-  # erro no method .class está repondendo ao tipo Array qunado interpolamos
-  # as a posição e a quantidade a ser pecorrida no Array
   def valida_conta?(lista)
     valida = true
-    if lista[0].class || lista[2,3] != Fixnum
-      valida = false
-    elsif lista[1].class != Float
-      valida = false
-    elsif lista[5,2].class != String
-      valida = false
+
+    for x in [lista[0], lista[2], lista[3], lista[4]]
+      valida = false if x.class != Fixnum
+    end
+
+    if valida
+      valida = false if lista[1].class != Float
+      valida = false if lista[5].class != String
+      valida = false if lista[6].class != String
     end
     return valida
   end

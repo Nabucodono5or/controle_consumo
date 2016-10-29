@@ -164,7 +164,6 @@ describe Client do
 
       client.listar_contas
     end
-
   end
 
   describe '#valida_conta?' do
