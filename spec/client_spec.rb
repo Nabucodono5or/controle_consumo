@@ -191,6 +191,8 @@ describe Client do
     it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
 
     it 'retorna true para os dados' do
+      gerente = double("GerenteContas")
+      allow(client).to receive(:gerente_contas).and_return(gerente)
 
       expect{ client.responde_menu(1) }.not_to raise_error
     end
