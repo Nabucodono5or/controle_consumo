@@ -49,7 +49,7 @@ describe Client do
     context 'se eu insiro o valor 4' do
       it 'e não obtenho contas cadstradas uma mensagem é levantada'
 
-      xit ' obtenho todas as contas cadastradas' do
+      it ' obtenho todas as contas cadastradas' do
         num = 4
 
         expect(client.responde_menu(num)).to respond_to(:listar_contas)
@@ -144,30 +144,6 @@ describe Client do
 
         expect(numero.length).to be > 1
       end
-    end
-  end
-
-  describe '#gerente_contas' do
-    before do
-      # 460, 206.43, 4166, 6, 2005, "4/7/2005", "15/07/2005"
-#      expect(client).to receive(:gets).and_return(460)#qtd_kw_gasto
-#      expect(client).to receive(:gets).and_return(206.43) #valor_pagar
-#      expect(client).to receive(:gets).and_return(4166) #numero_leitura
-#      expect(client).to receive(:gets).and_return(6) #mes
-#      expect(client).to receive(:gets).and_return(2005) #ano
-#      expect(client).to receive(:gets).and_return('4/07/2005') #emissao
-#      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
-    end
-
-    it 'lista  todas as contas' do
-      conta1 = double("conta", :mes => 6, :ano => 2005, :qtd_kw_gasto => 460)
-      conta2 = double("conta", :mes => 7, :ano => 2005, :qtd_kw_gasto => 320)
-      listinha = [conta1, conta2]
-      allow(client.instance_variable_get(:@gerente_contas)).to receive(:lista_contas).and_return(listinha)
-
-      expect(client.responde_menu(4)).to eq("6/2005 consumo: 460")
-
-      client.responde_menu(4)
     end
   end
 
