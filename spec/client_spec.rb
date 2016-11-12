@@ -188,7 +188,14 @@ describe Client do
       client.responde_menu(1)
     end
 
-    it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
+    it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1' do
+      lista = [460, 206.43, 4166, 6, "2005", "4/07/2005", "15/07/2005"]
+      gerente = double("GerenteContas")
+      allow(client).to receive(:gerente_contas).and_return(gerente)
+      allow(client).to receive(:valida_conta?).and_return(false)
+
+      expect{ client.responde_menu(1) }.to raise_error(StandardError)
+    end
 
     it 'retorna true para os dados' do
       gerente = double("GerenteContas")
