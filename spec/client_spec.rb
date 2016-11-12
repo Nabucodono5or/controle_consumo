@@ -159,10 +159,15 @@ describe Client do
 #      expect(client).to receive(:gets).and_return('15/07/2005') #vencimento
     end
 
-    xit 'instacia o @gerente_contas com a primeira conta' do
-      expect(client).to receive(:listar_contas).and_return("6/2005 consumo: 460")
+    it 'lista  todas as contas' do
+      conta1 = instance_double("conta", :mes => 6, :ano => 2005, :qtd_kw_gasto => 460)
+      conta2 = instance_double("conta", :mes => 7, :ano => 2005, :qtd_kw_gasto => 320)
+      listinha = [conta1, conta2]
+      allow(client.instance_variable_get(:@gerente_contas)).to receive(:lista_contas).and_return(listinha)
 
-      client.listar_contas
+      expect(client.responde_menu(4)).to eq("6/2005 consumo: 460")
+
+      client.responde_menu(4)
     end
   end
 
