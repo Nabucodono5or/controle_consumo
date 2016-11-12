@@ -48,8 +48,8 @@ class Client
   end
 
   def listar_contas
-    @gerente_contas.lista_contas.each do
-      puts "#{conta.mes}/#{conta.ano} consumo: #{conta.qtd_kw_gasto} "
+    @gerente_contas.lista_contas.each do |c|
+      puts "#{c.mes}/#{c.ano} consumo: #{c.qtd_kw_gasto} "
     end
   end
 
