@@ -189,6 +189,10 @@ describe Client do
     end
 
     it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1'
-    it 'retorna true para os dados'
+
+    it 'retorna true para os dados' do
+
+      expect{ client.responde_menu(1) }.not_to raise_error
+    end
   end
 end
