@@ -50,9 +50,8 @@ describe Client do
       it 'e não obtenho contas cadstradas uma mensagem é levantada'
 
       it ' obtenho todas as contas cadastradas' do
-        num = 4
 
-        expect(client.responde_menu(num)).to respond_to(:listar_contas)
+        expect(client).to respond_to(:listar_contas)
 
         client.responde_menu(4)
       end
