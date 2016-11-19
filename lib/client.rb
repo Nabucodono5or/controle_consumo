@@ -33,7 +33,7 @@ class Client
     when 1
       cadeia_de_perguntas
     when 2
-    #  @gerente_contas.mes_menor_consumo
+      @gerente_contas.mes_menor_consumo
     when 3
     #  @gerente_contas.mes_maior_consumo
     when 4

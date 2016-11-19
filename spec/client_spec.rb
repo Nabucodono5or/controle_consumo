@@ -31,7 +31,8 @@ describe Client do
       client.responde_menu(num)
     end
 
-    xit 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
+    it 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
+      allow(client).to receive(:mes_menor).and_return("Mes Julho, consumo de 460 kw/h\n")
       texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 2
 
