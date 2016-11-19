@@ -35,7 +35,7 @@ class Client
     when 2
       mes_menor
     when 3
-    #  @gerente_contas.mes_maior_consumo
+      mes_maior
     when 4
       listar_contas
     end
@@ -75,6 +75,10 @@ class Client
 
   def mes_menor
     @gerente_contas.mes_menor_consumo
+  end
+
+  def mes_maior
+    @gerente_contas.mes_maior_consumo
   end
 
   # integer 0,2,3,4
