@@ -32,12 +32,11 @@ describe Client do
     end
 
     it 'se eu insiro o valor 2 obtenho a saída do mes de menor consumo' do
-      allow(client).to receive(:mes_menor).and_return("Mes Julho, consumo de 460 kw/h\n")
-      texto = "Mes Julho, consumo de 460 kw/h\n"
       num = 2
 
-      # preciso de um before com um cadastro de conta ou um mock para fazer o teste funcionar
-      expect{ client.responde_menu(num) }.to output(texto).to_stdout
+      expect(client).to receive(:mes_menor).once
+
+      client.responde_menu(num)
     end
 
     xit 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do

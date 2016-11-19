@@ -33,7 +33,7 @@ class Client
     when 1
       cadeia_de_perguntas
     when 2
-      @gerente_contas.mes_menor_consumo
+      mes_menor
     when 3
     #  @gerente_contas.mes_maior_consumo
     when 4
@@ -71,6 +71,10 @@ class Client
     else
       raise 'Nenhuma conta cadastrada'
     end
+  end
+
+  def mes_menor
+    @gerente_contas.mes_menor_consumo
   end
 
   # integer 0,2,3,4
