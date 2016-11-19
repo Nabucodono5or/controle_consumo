@@ -48,7 +48,10 @@ describe Client do
     end
 
     context 'se eu insiro o valor 4' do
-      it 'e não obtenho contas cadstradas uma mensagem é levantada'
+      it 'e não obtenho contas cadstradas uma mensagem é levantada' do
+
+        expect{ client.responde_menu(4) }.to raise_error(RuntimeError)
+      end
 
       it ' obtenho todas as contas cadastradas' do
 
@@ -169,8 +172,7 @@ describe Client do
       client.responde_menu(1)
     end
 
-    it 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1' do
-      lista = [460, 206.43, 4166, 6, "2005", "4/07/2005", "15/07/2005"]
+    xit 'recusa os dados de uma conta lançando uma mensagem e retorna cadeia_de_perguntas com opção 1' do
       gerente = double("GerenteContas")
       allow(client).to receive(:gerente_contas).and_return(gerente)
       allow(client).to receive(:valida_conta?).and_return(false)

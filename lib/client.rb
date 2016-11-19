@@ -49,8 +49,12 @@ class Client
 
   def listar_contas
     li = @gerente_contas.lista_contas
-    li.each do |c|
-      puts "#{c.mes}/#{c.ano} consumo: #{c.qtd_kw_gasto} "
+    if li.empty?
+      raise 'Nenhuma conta cadastrada'
+    else
+      li.each do |c|
+        puts "#{c.mes}/#{c.ano} consumo: #{c.qtd_kw_gasto} "
+      end
     end
   end
 
