@@ -39,11 +39,12 @@ describe Client do
       client.responde_menu(num)
     end
 
-    xit 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do
-      texto = "Mes Julho, consumo de 460 kw/h\n"
+    it 'se eu insiro o valor 3 obtenho a saída do mes de maior consumo' do
       num = 3
 
-      expect{ client.responde_menu(num) }.to output(texto).to_stdout
+      expect(client).to receive(:mes_maior).once
+
+      client.responde_menu(num)
     end
 
     context 'se eu insiro o valor 4' do
