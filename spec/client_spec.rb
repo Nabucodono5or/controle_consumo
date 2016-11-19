@@ -54,6 +54,7 @@ describe Client do
       end
 
       it ' obtenho todas as contas cadastradas' do
+        allow(client).to receive(:vazio?).and_return(true)
 
         expect(client).to respond_to(:listar_contas)
 

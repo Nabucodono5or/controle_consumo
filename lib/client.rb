@@ -49,9 +49,8 @@ class Client
 
   def listar_contas
     li = @gerente_contas.lista_contas
-    if li.empty?
-      raise 'Nenhuma conta cadastrada'
-    else
+
+    if !vazio?(li)
       li.each do |c|
         puts "#{c.mes}/#{c.ano} consumo: #{c.qtd_kw_gasto} "
       end
@@ -83,6 +82,12 @@ class Client
 
   def mes_maior
     @gerente_contas.mes_maior_consumo
+  end
+
+  def vazio?(x)
+    if x.empty?
+      raise 'Nenhuma conta cadastrada'
+    end
   end
 
   # integer 0,2,3,4
