@@ -73,6 +73,7 @@ class Client
       gerente_contas(@lista_resposta)
     else
       raise 'Nenhuma conta cadastrada'
+      menu
     end
   end
 
