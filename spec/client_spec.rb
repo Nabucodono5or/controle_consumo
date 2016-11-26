@@ -186,7 +186,7 @@ describe Client do
       allow(client).to receive(:gerente_contas).and_return(gerente)
       allow(client).to receive(:valida_conta?).and_return(false)
 
-      expect(client).to receive(:menu).once
+      expect(client.responde_menu(1)).to eq(false)
 
       expect{ client.responde_menu(1) }.to raise_error(StandardError)
     end

@@ -73,7 +73,7 @@ class Client
       gerente_contas(@lista_resposta)
     else
       raise 'Nenhuma conta cadastrada'
-      menu
+      # lança uma valor false para controlar o menu
     end
   end
 
