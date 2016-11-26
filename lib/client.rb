@@ -73,7 +73,8 @@ class Client
       gerente_contas(@lista_resposta)
     else
       raise 'Nenhuma conta cadastrada'
-      # lança uma valor false para controlar o menu
+      # lança uma valor false para controlar o menu usando rescue
+      # Caso dẽ errado refatorar todo o código para eliminar valida dados por um rescue gerente_contas
     end
   end
 
