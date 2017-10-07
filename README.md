@@ -22,3 +22,4 @@ Antes de tudo você precisa ter o bundler instalado. Então da linha de comando 
 - [ ] Armazenamento em arquivos os dados.
 
 ## Licença
+Sob a [Apache License 2.0](https://github.com/Nabucodono5or/controle_consumo/blob/master/LICENSE)
