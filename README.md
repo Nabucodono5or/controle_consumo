@@ -16,9 +16,9 @@ Aplicativo por linha de comando que avalia o consumo de enegia entre duas contas
 Antes de tudo você precisa ter o bundler instalado. Então da linha de comando execute bundle install para instalar as dependências.
 
 ## Futuras adições
-- [] Adicionar as perguntas;
-- [] execução do Cálculo.
-- [] Envio de resposta ao usuário.
-- [] Armazenamento em arquivos os dados.
+- [ ] Adicionar as perguntas;
+- [ ] execução do Cálculo.
+- [ ] Envio de resposta ao usuário.
+- [ ] Armazenamento em arquivos os dados.
 
 ## Licença
