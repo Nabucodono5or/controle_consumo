@@ -1,4 +1,4 @@
-# controle_consumo
+# Controle de consumo
 Aplicativo por linha de comando que avalia o consumo de enegia entre duas contas de luz, indicando o aumento ou a dminuição de consumo.
 ## Suporte
 + ruby version ~> (2.2.3)
